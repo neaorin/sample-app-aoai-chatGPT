@@ -126,7 +126,7 @@ const Chat = () => {
 
     // useEffect(() => {
     //     getUserInfoList();
-    // }, []);
+    // }, []);  
 
     useEffect(() => chatMessageStreamEnd.current?.scrollIntoView({ behavior: "smooth" }), [showLoadingMessage]);
 
