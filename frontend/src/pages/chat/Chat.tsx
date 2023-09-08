@@ -489,9 +489,9 @@ const Chat = () => {
         }
     }, [processMessages]);
 
-    useEffect(() => {
-        getUserInfoList();
-    }, []);
+    // useEffect(() => {
+    //     getUserInfoList();
+    // }, []);
 
     useLayoutEffect(() => {
         chatMessageStreamEnd.current?.scrollIntoView({ behavior: "smooth" })
