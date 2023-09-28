@@ -530,8 +530,8 @@ const Chat = () => {
                                     className={styles.chatIcon}
                                     aria-hidden="true"
                                 />
-                                <h1 className={styles.chatEmptyStateTitle}>Întreabă Finanțele</h1>
-                                <h2 className={styles.chatEmptyStateSubtitle}>Ai vreo întrebare pe care vrei să ne-o adresezi?</h2>
+                                <h1 className={styles.chatEmptyStateTitle}>Ask Azure Open AI</h1>
+                                <h2 className={styles.chatEmptyStateSubtitle}>Any questions for us?</h2>
                             </Stack>
                         ) : (
                             <div className={styles.chatMessageStream} style={{ marginBottom: isLoading ? "40px" : "0px"}} role="log">
