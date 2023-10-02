@@ -498,7 +498,7 @@ const Chat = () => {
     }, [showLoadingMessage, processMessages]);
 
     const onShowCitation = (citation: Citation) => {
-        setActiveCitation([citation.content, citation.id, citation.title ?? "", citation.filepath ?? "", "", ""]);
+        setActiveCitation([citation.content, citation.id, citation.title ?? "", citation.filepath ?? "", citation.url ?? "", ""]);
         setIsCitationPanelOpen(true);
     };
 
@@ -531,7 +531,7 @@ const Chat = () => {
                                     aria-hidden="true"
                                 />
                                 <h1 className={styles.chatEmptyStateTitle}>Ask Azure Open AI</h1>
-                                <h2 className={styles.chatEmptyStateSubtitle}>Any questions for us?</h2>
+                                <h2 className={styles.chatEmptyStateSubtitle}>Are you trying to find the perfect candidate for your team?</h2>
                             </Stack>
                         ) : (
                             <div className={styles.chatMessageStream} style={{ marginBottom: isLoading ? "40px" : "0px"}} role="log">
@@ -641,7 +641,7 @@ const Chat = () => {
                             </Stack>
                             <QuestionInput
                                 clearOnSend
-                                placeholder="Întrebarea ta..."
+                                placeholder="Looking to fill this job role..."
                                 disabled={isLoading}
                                 onSend={(question, id) => {
                                     appStateContext?.state.isCosmosDBAvailable?.cosmosDB ? makeApiRequestWithCosmosDB(question, id) : makeApiRequestWithoutCosmosDB(question, id)
@@ -657,6 +657,7 @@ const Chat = () => {
                             <IconButton iconProps={{ iconName: 'Cancel'}} aria-label="Close citations panel" onClick={() => setIsCitationPanelOpen(false)}/>
                         </Stack>
                         <h5 className={styles.citationPanelTitle} tabIndex={0}>{activeCitation[2]}</h5>
+                        <a href={activeCitation[4] + "?sv=2022-11-02&ss=b&srt=sco&sp=r&se=2026-10-01T14:26:16Z&st=2023-10-01T06:26:16Z&spr=https&sig=N5JpVg0XVR%2F666zmXg3XyCqjjR4oaahq2vF3m6x5fqg%3D"}>Download document</a>
                         <div tabIndex={0}> 
                         <ReactMarkdown 
                             linkTarget="_blank"
